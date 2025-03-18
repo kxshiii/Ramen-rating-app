@@ -3,7 +3,7 @@ const ramenMenu = document.getElementById('ramen-menu');
 const detailImage = document.getElementById('detail-image');
 const ratingDisplay = document.getElementById('Rating-display');
 const commentDisplay = document.getElementById('Comment-display');
-const newRamenForm = document.getElementById('new-ramen-form');
+const newRamen = document.getElementById('new-ramen');
 
 const ramens = [
     { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "shoyu.jpg", rating: 5, comment: "Delicious!" },
@@ -34,11 +34,10 @@ ramenMenu.addEventListener('click', (e) => {
     }
 });
 
-newRamenForm.addEventListener('submit', (e) => {
+newRamen.addEventListener('submit', (e) => {
     e.preventDefault();
     
     const name = document.getElementById('new-name').value.toLowerCase();
-    const restaurant = document.getElementById('new-restaurant').value;
     const rating = document.getElementById('new-rating').value + '/10';
     const comment = document.getElementById('new-comment').value;
     const imageUrl = document.getElementById('new-image').value;
@@ -50,7 +49,7 @@ newRamenForm.addEventListener('submit', (e) => {
     newRamenImg.alt = `${name} ramen`;
     ramenMenu.appendChild(newRamenImg);
     
-    newRamenForm.reset();
+    newRamen.reset();
     
     alert(`Added ${name} ramen successfully!`);
 });
